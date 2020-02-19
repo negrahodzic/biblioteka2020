@@ -1,6 +1,6 @@
 package biblioteka.interfejs;
 
-import java.util.LinkedList;
+import java.util.List;
 
 import biblioteka.Autor;
 import biblioteka.Knjiga;
@@ -11,9 +11,9 @@ public interface BibliotekaInterfejs {
 	
 	public void obrisiKnjigu(Knjiga knjiga);
 	
-	public LinkedList<Knjiga> vratiSveKnjige();
+	public List<Knjiga> vratiSveKnjige();
 	
-	public LinkedList<Knjiga> pronadjiKnjigu(Autor autor,
+	public List<Knjiga> pronadjiKnjigu(Autor autor,
 			String isbn, String naslov, String izdavac);
 	
 }
