@@ -7,7 +7,8 @@ import java.util.List;
 import biblioteka.interfejs.BibliotekaInterfejs;
 
 public class Biblioteka implements BibliotekaInterfejs {
-	
+	// Ovo je lista sa knjigama iz biblioteke, implementacija
+	// ArrayList zbog brzine citanja
 	private List<Knjiga> knjige = new ArrayList<Knjiga>();
 
 	@Override
