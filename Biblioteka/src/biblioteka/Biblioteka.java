@@ -16,6 +16,9 @@ public class Biblioteka implements BibliotekaInterfejs {
 		if (knjiga == null)
 			throw new RuntimeException("Knjiga ne sme biti null");
 		
+		if (knjige.contains(knjiga))
+			throw new RuntimeException("Knjiga vec postoji u biblioteci");
+
 		knjige.add(knjiga);
 	}
 

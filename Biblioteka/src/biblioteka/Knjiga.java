@@ -14,30 +14,45 @@ public class Knjiga {
 		return naslov;
 	}
 	public void setNaslov(String naslov) {
+		if (naslov == null || naslov.isEmpty())
+			throw new RuntimeException("Naslov ne sme biti null niti prazan String");
+		
 		this.naslov = naslov;
 	}
 	public String getIsbn() {
 		return isbn;
 	}
 	public void setIsbn(String isbn) {
+		if (isbn == null || (isbn.length()!= 8 && isbn.length()!= 13))
+			throw new RuntimeException("ISBN ne sme biti null i mora biti duzine tacno 8 ili 13 znakova");
+		
 		this.isbn = isbn;
 	}
 	public LinkedList<Autor> getAutori() {
 		return autori;
 	}
 	public void setAutori(LinkedList<Autor> autori) {
+		if (autori == null || autori.isEmpty())
+			throw new RuntimeException("Morate uneti listu sa autorima koja nije ni null ni prazna");
+		
 		this.autori = autori;
 	}
 	public String getIzdavac() {
 		return izdavac;
 	}
 	public void setIzdavac(String izdavac) {
+		if (izdavac == null || izdavac.isEmpty())
+			throw new RuntimeException("Izdavac ne sme biti null niti prazan String");
+		
 		this.izdavac = izdavac;
 	}
 	public int getIzdanje() {
 		return izdanje;
 	}
 	public void setIzdanje(int izdanje) {
+		if (izdanje <=0 )
+			throw new RuntimeException("Izdanje mora biti broj veci od nule");
+		
 		this.izdanje = izdanje;
 	}
 	@Override
