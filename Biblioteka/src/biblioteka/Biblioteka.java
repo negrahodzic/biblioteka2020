@@ -11,6 +11,7 @@ public class Biblioteka implements BibliotekaInterfejs {
 	// ArrayList zbog brzine citanja
 	private List<Knjiga> knjige = new ArrayList<Knjiga>();
 
+	//Dodaje se knjiga na kraj liste
 	@Override
 	public void dodajKnjigu(Knjiga knjiga) {
 		if (knjiga == null)
