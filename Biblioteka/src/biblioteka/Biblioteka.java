@@ -12,11 +12,17 @@ public class Biblioteka implements BibliotekaInterfejs {
 
 	@Override
 	public void dodajKnjigu(Knjiga knjiga) {
+		if (knjiga == null)
+			throw new RuntimeException("Knjiga ne sme biti null");
+		
 		knjige.add(knjiga);
 	}
 
 	@Override
 	public void obrisiKnjigu(Knjiga knjiga) {
+		if (knjiga == null)
+			throw new RuntimeException("Knjiga ne sme biti null");
+		
 		knjige.remove(knjiga);
 	}
 
