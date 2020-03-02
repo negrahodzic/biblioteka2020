@@ -33,7 +33,7 @@ public class Biblioteka implements BibliotekaInterfejs {
 
 	@Override
 	public List<Knjiga> pronadjiKnjigu(Autor autor, String isbn, String naslov, String izdavac) {
-		if (autor == null || naslov == null || isbn == null	|| izdavac == null)
+		if (autor == null && naslov == null && isbn == null	&& izdavac == null)
 			return null;		
 		
 		List<Knjiga> rezultat = new LinkedList<Knjiga>();
