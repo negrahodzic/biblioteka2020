@@ -101,23 +101,63 @@ public class KnjigaTest {
 		assertEquals(autori, k.getAutori());
 	}
 
-	@Test
-	public void testSetIzdavac() {
-		fail("Not yet implemented");
+	@Test (expected = java.lang.RuntimeException.class)
+	public void testSetIzdavacNull() {
+		k.setIzdavac(null);
 	}
 
+	@Test (expected = java.lang.RuntimeException.class)
+	public void testSetIzdavacPrazanString() {
+		k.setIzdavac("");
+	}
+	
+	@Test 
+	public void testSetIzdavac() {
+		k.setIzdavac("Izdavac 1");
+		
+		assertEquals("Izdavac 1", k.getIzdavac());
+	}
+	
+	@Test (expected = java.lang.RuntimeException.class)
+	public void testSetIzdanjeNula() {
+		k.setIzdanje(0);
+	}
+	
+	@Test (expected = java.lang.RuntimeException.class)
+	public void testSetIzdanjeNegativno() {
+		k.setIzdanje(-1);
+	}
+	
 	@Test
 	public void testSetIzdanje() {
-		fail("Not yet implemented");
+		k.setIzdanje(1);
+		
+		assertEquals(1, k.getIzdanje());
 	}
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		k.setNaslov("Naslov 2");
+		k.setIzdavac("Izdavac 2");
+		k.setIzdanje(13);
+		k.setIsbn("87654321");
+		
+		LinkedList<Autor> autori = new LinkedList<Autor>();
+		
+		autori.add(a);
+		
+		k.setAutori(autori);
+		
+		String s = k.toString();
+		
+		assertTrue(s.contains("Naslov 2"));
+		assertTrue(s.contains("Izdavac 2"));
+		assertTrue(s.contains("13"));
+		assertTrue(s.contains("87654321"));
 	}
 
 	@Test
-	public void testEqualsObject() {
+	public void testEqualsObjectFalse() {
 		fail("Not yet implemented");
 	}
 
