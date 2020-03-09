@@ -66,19 +66,53 @@ public class BibliotekaTest {
 		assertEquals( k2, sveKnjige.get(1) );
 	}
 
+	@Test (expected = java.lang.RuntimeException.class)
+	public void testObrisiKnjiguNull() {
+		b.obrisiKnjigu(null);
+	}
+
 	@Test
 	public void testObrisiKnjigu() {
-		fail("Not yet implemented");
+		b.dodajKnjigu(k1);
+		b.dodajKnjigu(k2);
+		
+		b.obrisiKnjigu(k1);
+		
+		List<Knjiga> sveKnjige = b.vratiSveKnjige();
+		
+		assertTrue(sveKnjige.size() == 1);
+		assertEquals(k2, sveKnjige.get(0) );
 	}
-
+	
 	@Test
 	public void testVratiSveKnjige() {
-		fail("Not yet implemented");
+		b.dodajKnjigu(k2);
+		b.dodajKnjigu(k1);
+		
+		
+		List<Knjiga> sveKnjige = b.vratiSveKnjige();
+		
+		assertTrue(sveKnjige.size() == 2);
+		assertEquals(k2, sveKnjige.get(0) );
+		assertEquals(k1, sveKnjige.get(1) );
 	}
 
 	@Test
+	public void testPronadjiKnjiguNemaKriterijuma() {
+		List<Knjiga> rezultat = b.pronadjiKnjigu(null, null, null, null);
+		
+		assertNull(rezultat);
+	}
+	
+	@Test
 	public void testPronadjiKnjigu() {
-		fail("Not yet implemented");
+		b.dodajKnjigu(k1);
+		b.dodajKnjigu(k2);
+		
+		List<Knjiga> rezultat = b.pronadjiKnjigu(null, null, "1", null);
+		
+		assertTrue(rezultat.size() == 1);
+		assertEquals(k1, rezultat.get(0) );
 	}
 
 }

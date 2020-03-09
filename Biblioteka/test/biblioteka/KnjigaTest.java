@@ -157,8 +157,37 @@ public class KnjigaTest {
 	}
 
 	@Test
+	public void testEqualsObjectNull() {
+		k.setIsbn("12345678");
+		
+		assertFalse( k.equals(null) );
+	}
+	
+	@Test
+	public void testEqualsObjectPogresnaKlasa() {
+		k.setIsbn("12345678");
+		
+		assertFalse( k.equals(new Object() ) );
+	}
+	
+	@Test
 	public void testEqualsObjectFalse() {
-		fail("Not yet implemented");
+		k.setIsbn("12345678");
+		
+		Knjiga k2 = new Knjiga();
+		k2.setIsbn("87654321");
+		
+		assertFalse( k.equals(k2) );
+	}
+	
+	@Test
+	public void testEqualsObjectTrue() {
+		k.setIsbn("12345678");
+		
+		Knjiga k2 = new Knjiga();
+		k2.setIsbn("12345678");
+		
+		assertTrue( k.equals(k2) );
 	}
 
 }
