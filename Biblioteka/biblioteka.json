@@ -1,0 +1,30 @@
+[
+  {
+    "naslov": "Petnaestogodisnji kapetan",
+    "isbn": "123456789",
+    "autori": [
+      {
+        "ime": "Zil",
+        "prezime": "Vern"
+      },
+      {
+        "ime": "Rik",
+        "prezime": "Jensi"
+      }
+    ],
+    "izdavac": "Urban Reads",
+    "izdanje": 10
+  },
+  {
+    "naslov": "Obilje Katarina",
+    "isbn": "987654213",
+    "autori": [
+      {
+        "ime": "Dzon",
+        "prezime": "Grin"
+      }
+    ],
+    "izdavac": "Laguna",
+    "izdanje": 3
+  }
+]

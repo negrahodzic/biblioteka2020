@@ -18,6 +18,11 @@ public class Autor {
 	 */
 	private String prezime;
 	
+	public Autor(String ime, String prezime) {
+		this.ime = ime;
+		this.prezime = prezime;
+	}
+
 	/**
 	 * Vraca ime autora.
 	 * 
