@@ -98,4 +98,16 @@ public class Biblioteka implements BibliotekaInterfejs {
 		return rezultat;
 	}
 
+	@Override
+	public void sacuvajSveKnjigeJSON(String fajl) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ucitajSveKnjigeJSON(String fajl) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
